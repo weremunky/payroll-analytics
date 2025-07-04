@@ -7,7 +7,10 @@ A Python implementation of an automated payroll and order billing analytics solu
 ## What This Does
 
 This project processes employee timesheets and customer orders to automate payroll calculation (including overtime), link employee work logs to customer billing, and generate clear summary reports and visualizations. I used sample business data to simulate real-world business analytics and process improvement.
-
+```
+Note:
+This code is a recreation of an internal tool I originally developed for my previous job to automate payroll and order analytics at a moving business. The CSV files provided are for testing purposes only, to illustrate how the code works.
+```
 ---
 
 ## Key Features

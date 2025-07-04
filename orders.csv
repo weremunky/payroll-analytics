@@ -1,0 +1,6 @@
+order_id,date,customer,employee_id,job,amount_billed
+101,2020-06-28,Beeline,1,Mober,400
+101,2020-06-28,Beeline,2,Driver,400
+102,2020-06-29,Home LLC,1,Mover,300
+102,2020-06-29,Home LLC,2,Foreman,300
+102,2020-06-29,Home LLC,3,Mover,300

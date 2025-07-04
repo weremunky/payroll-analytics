@@ -1,0 +1,11 @@
+employee_id,name,hours_worked,pay,customer,amount_billed
+1,John Smith,9,190.0,Beeline,400
+1,John Smith,9,190.0,Home LLC,300
+1,John Yi,8,160.0,Beeline,400
+1,John Yi,8,160.0,Home LLC,300
+2,Anna Karman,7,140.0,Beeline,400
+2,Anna Karman,7,140.0,Home LLC,300
+2,Svetlana Tver,9,190.0,Beeline,400
+2,Svetlana Tver,9,190.0,Home LLC,300
+3,Ivan Ivanov,10,220.0,Home LLC,300
+3,Mike Jin,7,140.0,Home LLC,300

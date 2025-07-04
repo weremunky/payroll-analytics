@@ -1,0 +1,7 @@
+employee_id,name,date,hours_worked,job
+1,John Smith,2020-06-28,9,Mover
+2,Anna Karman,2020-06-28,7,Driver
+3,Ivan Ivanov,2020-06-28,10,Mover
+1,John Yi,2020-06-29,8,Mover
+2,Svetlana Tver,2020-06-29,9,Foreman
+3,Mike Jin,2020-06-29,7,Mover

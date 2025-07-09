@@ -1,21 +1,41 @@
 import os
+import sys
 import pandas as pd
 import matplotlib.pyplot as plt
+import argparse
 
-BASE_PAY = 20
-OT_MULTIPLIER = 1.5
+#Command-line arguments for universality
+parser = argparse.ArgumentParser(description="Payroll and Billing Analytics")
+parser.add_argument("--employees", type=str, default="employees.csv", help="Employee hours CSV")
+parser.add_argument("--orders", type=str, default="orders.csv", help="Orders/Billing CSV")
+parser.add_argument("--base_pay", type=float, default=20, help="Base pay rate per hour")
+parser.add_argument("--ot_multiplier", type=float, default=1.5, help="Overtime multiplier")
+args = parser.parse_args()
+
+BASE_PAY = args.base_pay
+OT_MULTIPLIER = args.ot_multiplier
 
 #Verify data files exist
-required_files = ['employees.csv', 'orders.csv']
+required_files = [args.employees, args.orders]
 missing = [f for f in required_files if not os.path.exists(f)]
 if missing:
     print(f"ERROR: Missing file(s): {', '.join(missing)}.")
-    exit(1)
+    sys.exit(1)
 
-employees = pd.read_csv('employees.csv')
-orders = pd.read_csv('orders.csv')
+employees = pd.read_csv(args.employees)
+orders = pd.read_csv(args.orders)
 
 #Data validation
+expected_emp_cols = {'employee_id', 'name', 'date', 'hours_worked', 'job'}
+expected_ord_cols = {'order_id', 'date', 'customer', 'employee_id', 'job', 'amount_billed'}
+
+if not expected_emp_cols.issubset(employees.columns):
+    print(f"ERROR: {args.employees} missing columns: {expected_emp_cols - set(employees.columns)}")
+    sys.exit(1)
+if not expected_ord_cols.issubset(orders.columns):
+    print(f"ERROR: {args.orders} missing columns: {expected_ord_cols - set(orders.columns)}")
+    sys.exit(1)
+
 if employees.isnull().any().any():
     print("WARNING: Null values detected in employees.csv.")
 if orders.isnull().any().any():

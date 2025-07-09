@@ -37,6 +37,21 @@ pip3 install pandas matplotlib openpyxl
 That’s it. No special accounts or paid tools required.
 
 ---
+## Universal Usage & Customization
+
+This script is plug-and-play for any business with similar CSV data.
+Set your own filenames, pay rates, and overtime rules from the command line:
+
+```bash
+python3 main.py --employees my_employees.csv --orders my_orders.csv --base_pay 25 --ot_multiplier 2.0
+```
+
+- `--employees`: Employee data CSV (default: employees.csv)
+- `--orders`: Orders/billing CSV (default: orders.csv)
+- `--base_pay`: Base pay per hour (default: 20)
+- `--ot_multiplier`: Overtime multiplier (default: 1.5)
+
+---
 
 ## How to Run
 

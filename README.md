@@ -92,13 +92,13 @@ What I Learned
 
 ## This project taught me a lot about:
 
-    - **Automating real-world business reporting and payroll
+- **Automating real-world business reporting and payroll
 
-    - **Handling operational data with Python and pandas
+- **Handling operational data with Python and pandas
 
-    - **Performing basic error checking on business data
+- **Performing basic error checking on business data
 
-    - **Creating professional reports and business visuals
+- **Creating professional reports and business visuals
 
 While this payroll tool is not complex software, it reflects the backbone of business analytics work in any company.
 Next Steps & Improvements
@@ -107,13 +107,13 @@ Next Steps & Improvements
 
 ## Some ideas I’m considering for future versions:
 
-    - **Add custom pay rates and overtime rules per job/employee
+- **Add custom pay rates and overtime rules per job/employee
 
-    - **Export management dashboards with richer visuals
+- **Export management dashboards with richer visuals
 
-    - **Integrate with Google Sheets or business databases
+- **Integrate with Google Sheets or business databases
 
-    - **Implement user authentication for sensitive payroll access
+- **Implement user authentication for sensitive payroll access
 
 This project gave me hands-on experience with the kind of operational automation that’s standard in real-world analytics and data roles, and I’m excited to expand on it.
 

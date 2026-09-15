@@ -81,7 +81,8 @@ The output gives you several key deliverables:
 
     payroll_summary.csv: Total hours and pay per employee
 
-    employee_summary.csv / .xlsx: Combined payroll and billing details per employee, with billed amounts split evenly across employees who worked the same order
+    employee_summary.csv / .xlsx: Combined payroll and billing details per employee, with billed amounts split evenly 
+    across employees who worked the same order
 
     pay_by_employee.png: Visual chart comparing total pay by employee
 

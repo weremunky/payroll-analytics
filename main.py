@@ -46,7 +46,7 @@ if (employees['hours_worked'] > 16).any():
 def calc_pay(row):
     hrs = row['hours_worked']
     overtime = max(0, hrs - 8)
-    return 8 * BASE_PAY + overtime * BASE_PAY * OT_MULTIPLIER if overtime else hrs * BASE_PAY
+    return 8 * BASE_PAY + overtime * BASE_PAY * OT_MULTIPLIER if overtime > 0 else hrs * BASE_PAY
 
 employees['pay'] = employees.apply(calc_pay, axis=1)
 
@@ -55,12 +55,20 @@ payroll = (
     .agg({'hours_worked': 'sum', 'pay': 'sum'})
 )
 
+#Split billing evenly across employees who worked the same order,
+#so an order's amount_billed is not counted in full for every employee on it
+orders = orders.copy()
+orders['employees_on_order'] = orders.groupby('order_id')['employee_id'].transform('nunique')
+orders['amount_billed_share'] = orders['amount_billed'] / orders['employees_on_order']
+
 billing = (
-    orders.groupby(['employee_id', 'customer'], as_index=False)
-    .agg({'amount_billed': 'sum'})
+    orders.groupby(['employee_id'], as_index=False)
+    .agg({'amount_billed_share': 'sum'})
+    .rename(columns={'amount_billed_share': 'amount_billed'})
 )
 
 summary = pd.merge(payroll, billing, on='employee_id', how='left')
+summary['amount_billed'] = summary['amount_billed'].fillna(0)
 
 print("\nPayroll Summary:\n", payroll)
 print("\nOrder Billing Summary:\n", billing)

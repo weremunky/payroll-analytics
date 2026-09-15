@@ -118,4 +118,4 @@ Next Steps & Improvements
 This project gave me hands-on experience with the kind of operational automation that’s standard in real-world analytics and data roles, and I’m excited to expand on it.
 
 ---
-Ian Angel, 2024
+Yan Angel, 2024

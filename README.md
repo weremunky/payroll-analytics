@@ -86,7 +86,6 @@ The output gives you several key deliverables:
     pay_by_employee.png: Visual chart comparing total pay by employee
 
 The script also warns you if an employee is logged for over 16 hours/day, or if there are missing fields in your data.
-What I Learned
 
 ---
 
